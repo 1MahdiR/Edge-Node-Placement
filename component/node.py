@@ -16,7 +16,8 @@ class Node:
     NODES_COORDINATES = []  # Storing the nodes coordinates
 
     def __init__(self, _id: int, x: int, y: int, avg_load: float, avg_cycles: int, avg_data_size: int,
-                 avg_num_connections: int, is_server_placed: bool, server_count: int, bandwidth: float):
+                 avg_num_connections: int, is_server_placed: bool, server_count: int, bandwidth: float,
+                 num_access_points: int):
         self._id = _id
 
         if (x, y) in self.NODES_COORDINATES:  # Checking if the node is uniquely placed
@@ -32,8 +33,10 @@ class Node:
         self.avg_data_size = avg_data_size
         self.avg_num_connections = avg_num_connections
 
-        # Data transmission rate properties
+        # Wireless transmission properties
         # TODO: complete the data transmission rate properties
+        self.bandwidth = bandwidth
+        self.num_access_points = num_access_points
 
         # Base Station properties
         self.is_server_placed = is_server_placed
