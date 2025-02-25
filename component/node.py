@@ -12,6 +12,7 @@ class Node:
     """
 
     NODES_COORDINATES = []  # Storing the nodes coordinates
+    NODES = []
 
     def __init__(self, _id: int, x: int, y: int, avg_load: float, avg_cycles: int, avg_data_size: int,
                  avg_num_connections: int, is_server_placed: bool, server_count: int, bandwidth: float,
@@ -41,6 +42,7 @@ class Node:
         self.server_count = server_count
 
         Node.NODES_COORDINATES.append((x, y))
+        Node.NODES.append(self)
 
     def calculate_cost(self):
         return (FIXED_PLACEMENT_COST + VAR_PLACEMENT_COST * self.server_count +

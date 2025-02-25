@@ -1,9 +1,14 @@
 
 class Fog:
+
+    FOG_NODES = []
+
     def __init__(self, _id: int, is_server_placed: bool, server_count: int):
         self._id = _id
         self.is_server_placed = is_server_placed
         self.server_count = server_count
+
+        Fog.FOG_NODES.append(self)
 
     def __repr__(self):
         return "<Fog #%d>" % self._id
