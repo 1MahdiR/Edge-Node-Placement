@@ -1,6 +1,4 @@
-CONST_FIXED_COST = 500
-CONST_VAR_COST = 50
-
+from config import base_station
 
 class Node:
     """
