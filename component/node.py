@@ -1,4 +1,4 @@
-from config import base_station
+from config.base_station import *
 
 class Node:
     """
@@ -41,6 +41,10 @@ class Node:
         self.server_count = server_count
 
         Node.NODES_COORDINATES.append((x, y))
+
+    def calculate_cost(self):
+        return (FIXED_PLACEMENT_COST + VAR_PLACEMENT_COST * self.server_count +
+                VAR_ACCESS_POINT_COST * self.num_access_points)
 
     def __repr__(self):
         return self._id
