@@ -44,6 +44,13 @@ class Node:
         Node.NODES_COORDINATES.append((x, y))
         Node.NODES.append(self)
 
+    @staticmethod
+    def get_node_by_coordinates(x, y):
+        for node in Node.NODES:
+            if node.x == x and node.y == y:
+                return node
+        return None
+
     def calculate_cost(self):
         return (FIXED_PLACEMENT_COST + VAR_PLACEMENT_COST * self.server_count +
                 VAR_ACCESS_POINT_COST * self.num_access_points)
