@@ -47,11 +47,11 @@ class Node:
                 VAR_ACCESS_POINT_COST * self.num_access_points)
 
     def __repr__(self):
-        return self._id
+        return "<Node #%d>" % self._id
 
     def __str__(self):
         return (
-                "<Node #%s, (%d,%d)%s>" %
+                "<Node #%d, (%d,%d)%s>" %
                 (self._id, self.x, self.y, ", ROUTER" if not self.is_server_placed else
                 ", %d servers" % self.server_count)
         )
